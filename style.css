@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400;900&family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
+
+  background: radial-gradient(
+    circle,
+    rgba(52, 103, 212, 1) 0%,
+    rgba(62, 165, 236, 1) 50%,
+    rgba(62, 191, 236, 1) 100%
+  );
+}
+
+.canvas {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 400px 250px 400px;
+}
+
+.player {
+  position: relative;
+  display: flex;
+  row-gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: whitesmoke;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.computer {
+  position: relative;
+  display: flex;
+  row-gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  background-color: whitesmoke;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.intro-image {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  background-image: url("./images/rps.png");
+  background-position: center;
+  background-size: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+}
+
+.rock-image {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  background-image: url("./images/rock.png");
+  background-position: center;
+  background-size: contain;
+  background-size: 45px;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+}
+
+.paper-image {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  background-image: url("./images/paper.png");
+  background-position: center;
+  background-size: contain;
+  background-size: 45px;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+}
+
+.scissors-image {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  background-image: url("./images/scissors.png");
+  background-position: center;
+  background-size: contain;
+  background-size: 45px;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+}
+
+.player-input-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.computer-input-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.button-container button {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.button-container button:hover {
+  transform: scale(0.9);
+}
+
+.button-container button:nth-child(1) {
+  background-image: url("./images/Rock.png");
+  background-position: center;
+  background-size: contain;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+
+.button-container button:nth-child(2) {
+  background-image: url("./images/Paper.png");
+  background-position: center;
+  background-size: contain;
+  background-size: 35px;
+  background-repeat: no-repeat;
+}
+
+.button-container button:nth-child(3) {
+  background-image: url("./images/Scissors.png");
+  background-position: center;
+  background-size: contain;
+  background-size: 35px;
+  background-repeat: no-repeat;
+}
+
+.playerInput,
+.computerInput {
+  background-color: transparent;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 1.2px;
+  margin-top: 10px;
+  outline: none;
+  user-select: none;
+  border: none;
+  pointer-events: none;
+}
+
+.playerScore {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  border: 1px solid aquamarine;
+  background-color: aquamarine;
+  font-size: 24px;
+  color: white;
+  width: 100px;
+  text-align: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.computerScore {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  border: 1px solid orangered;
+  background-color: orangered;
+  font-size: 24px;
+  color: white;
+  width: 100px;
+  text-align: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.results .draw {
+  font-size: 40px;
+  color: gray;
+}
+
+.results .playerWin {
+  font-size: 40px;
+  color: green;
+}
+
+.results .computerWin {
+  font-size: 40px;
+  color: red;
+}
+
+.reset {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.reset button {
+  border: transparent;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.reset button:disabled {
+  cursor: not-allowed;
+}
+
+.reset button:not(:disabled):hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.winner {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  font-size: 50px;
+  letter-spacing: 5px;
+}
+
+.winner-player {
+  background: linear-gradient(
+    90deg,
+    rgba(244, 249, 2, 1) 0%,
+    rgba(99, 255, 35, 1) 20%,
+    rgba(40, 40, 200, 1) 40%,
+    rgba(20, 20, 255, 1) 60%,
+    rgba(149, 88, 106, 1) 80%,
+    rgba(236, 62, 62, 1) 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-background-size: 500%;
+  background-size: 500%;
+  -webkit-text-fill-color: transparent;
+  animation: 7s changingColor infinite linear;
+}
+
+.winner-computer {
+  color: red;
+}
+
+@keyframes changingColor {
+  0% {
+    background-position: 0 100%;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+}

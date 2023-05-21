@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="canvas">
+      <h1 class="winner"></h1>
+      <div class="player">
+        <h1>Player 1</h1>
+        <div class="button-container">
+          <button value="Rock"></button>
+          <button value="Paper"></button>
+          <button value="Scissors"></button>
+        </div>
+        <div class="player-input-div">
+          <p>Player Choice:</p>
+          <input class="playerInput" type="text" id="player" readonly />
+        </div>
+        <div class="playerScore"></div>
+      </div>
+
+      <div class="results">
+        <p></p>
+      </div>
+
+      <div class="reset">
+        <button>Reset Game</button>
+      </div>
+
+      <div class="computer">
+        <h1>Computer</h1>
+        <div class="computer-image intro-image"></div>
+        <div class="computer-input-div">
+          <p>Computer Choices:</p>
+          <input class="computerInput" type="text" id="computer" readonly />
+        </div>
+        <div class="computerScore"></div>
+      </div>
+
+      <div class="scores"></div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
